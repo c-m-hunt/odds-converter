@@ -68,3 +68,35 @@ Deno.test({
     }
   },
 });
+
+Deno.test({
+  name: "it converts to implied probability",
+  fn: (): void => {
+    const expectations: Array<[number, number]> = [
+      [2.25, 0.4444],
+      [1.25, 0.8],
+      [1001, 0.001],
+      [10, 0.1],
+    ];
+    for (let e of expectations) {
+      let odds = new Odds(e[0]);
+      assertEquals(parseFloat(odds.impliedProbability.toFixed(4)), e[1]);
+    }
+  },
+});
+
+Deno.test({
+  name: "it converts to implied probability string",
+  fn: (): void => {
+    const expectations: Array<[number, string]> = [
+      [2.25, "44.44%"],
+      [1.25, "80%"],
+      [1001, "0.1%"],
+      [10, "10%"],
+    ];
+    for (let e of expectations) {
+      let odds = new Odds(e[0]);
+      assertEquals(odds.impliedProbabilityString, e[1]);
+    }
+  },
+});
