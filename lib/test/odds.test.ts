@@ -1,4 +1,4 @@
-import { Odds } from "./../odds.ts";
+import { Odds, OddsType } from "./../odds.ts";
 import {
   assert,
   assertEquals,
@@ -97,6 +97,23 @@ Deno.test({
     for (let e of expectations) {
       let odds = new Odds(e[0]);
       assertEquals(odds.impliedProbabilityString, e[1]);
+    }
+  },
+});
+
+Deno.test({
+  name: "it makes a sensible guess at an odds string",
+  fn: (): void => {
+    const expectations: Array<[string, string]> = [
+      ["+150", OddsType.US],
+      ["4-1", OddsType.FRACTION],
+      ["4/1", OddsType.FRACTION],
+      ["2.25", OddsType.DECIMAL],
+      ["1.25", OddsType.DECIMAL],
+    ];
+    for (let e of expectations) {
+      let type = Odds.guessType(e[0]);
+      assertEquals(type, e[1]);
     }
   },
 });
