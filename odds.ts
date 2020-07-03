@@ -19,4 +19,9 @@ const displayOddsOutput = (oddsStr: string): void => {
   console.log(table.toString());
 };
 
-displayOddsOutput(args[0]);
+if (args.length != 1) {
+  console.log("Enter a value to be converted")
+} else {
+  displayOddsOutput(args[0]);
+}
+
