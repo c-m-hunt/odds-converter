@@ -123,9 +123,9 @@ Deno.test({
   fn: (): void => {
     assertThrows((): void => {
       Odds.guessType("badodds");
-    })
+    });
     assertThrows((): void => {
       Odds.guessType("100x");
-    })
+    });
   },
 });

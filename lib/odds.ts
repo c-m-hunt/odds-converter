@@ -98,6 +98,29 @@ export class Odds {
     return new Odds(decimalOdds);
   }
 
+  static fromFraction(oddsFractionString: string): Odds {
+    throw Error("Not implemented");
+  }
+
+  /**
+   * Produces an Odds object from a string. It will guess the type.
+   *
+   * @static
+   * @param {string} oddsString
+   * @returns {Odds}
+   * @memberof Odds
+   */
+  static fromString(oddsString: string): Odds {
+    const type = Odds.guessType(oddsString);
+    if (type === OddsType.US) {
+      return Odds.fromUS(oddsString);
+    }
+    if (type === OddsType.DECIMAL) {
+      return new Odds(Number(oddsString));
+    }
+    throw Error("Can't find type");
+  }
+
   /**
    * Has a guess at the type of odds given input from a string
    *

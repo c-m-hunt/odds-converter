@@ -1,27 +1,22 @@
-import Denomander from "https://deno.land/x/denomander/mod.ts";
+import AsciiTable, { AsciiAlign } from "https://deno.land/x/ascii_table/mod.ts";
+import { Odds } from "./lib/odds.ts";
 export { Odds } from "./lib/odds.ts";
 
-const program = new Denomander(
-  {
-    app_name: "Odds Converter",
-    app_description: "My odds converter",
-    app_version: "0.0.1",
-  },
-);
+let args = Deno.args;
 
-interface Input {
-  valueToConvert: any;
-}
+const displayOddsOutput = (oddsStr: string): void => {
+  const odds = Odds.fromString(oddsStr);
 
-program
-  .command(
-    "convert [valueToConvert]",
-    "Convert tool. Will guess input type unless specified",
-  )
-  .option("-t --type", "Input type. By default will guess.")
-  .action(({ valueToConvert }: any) => {
-    console.log(valueToConvert);
-    console.log(program.type);
-  });
+  const table = new AsciiTable("Converted Odds");
+  table
+    .setHeadingAlign(AsciiAlign.CENTER)
+    .setHeading("Type", "Value")
+    .setAlign(1, AsciiAlign.RIGHT)
+    .addRow("US", odds.usOddsString)
+    .addRow("Decimal", odds.decimalOdds)
+    .addRow("Fraction", "To be implemented")
+    .addRow("Implied probability", odds.impliedProbabilityString);
+  console.log(table.toString());
+};
 
-program.parse(Deno.args);
+displayOddsOutput(args[0]);
