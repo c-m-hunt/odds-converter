@@ -115,7 +115,7 @@ export class Odds {
         return OddsType.FRACTION;
       }
     }
-    if (parseFloat(odds)) {
+    if (Number(odds)) {
       return OddsType.DECIMAL;
     }
     throw new Error(`${odds} does not seem to be a valid odds string`);

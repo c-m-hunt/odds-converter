@@ -117,3 +117,15 @@ Deno.test({
     }
   },
 });
+
+Deno.test({
+  name: "it throws an exception when odds string is invalid",
+  fn: (): void => {
+    assertThrows((): void => {
+      Odds.guessType("badodds");
+    })
+    assertThrows((): void => {
+      Odds.guessType("100x");
+    })
+  },
+});
