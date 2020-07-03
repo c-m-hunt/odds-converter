@@ -24,4 +24,3 @@ if (args.length != 1) {
 } else {
   displayOddsOutput(args[0]);
 }
-
