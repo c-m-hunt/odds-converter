@@ -1,5 +1,7 @@
 # Odds converter
+![Latest Tag](https://img.shields.io/github/v/tag/c-m-hunt/odds-converter)
 [![deno version](https://img.shields.io/badge/deno-^1.1.2-informational)](https://github.com/denoland/deno)
+![Build](https://img.shields.io/github/workflow/status/c-m-hunt/odds-converter/Run%20Tests)
 ![Run Tests](https://github.com/c-m-hunt/odds-converter/workflows/Run%20Tests/badge.svg)
 
 A simple class and CLI tool to convert betting odds between formats.
