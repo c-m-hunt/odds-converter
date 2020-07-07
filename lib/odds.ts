@@ -1,3 +1,5 @@
+import { getFraction, round } from "./utils.ts";
+
 export enum OddsType {
   US = "us",
   FRACTION = "frac",
@@ -37,8 +39,8 @@ export class Odds {
    */
   get usOdds() {
     return this.decimalOdds > 2
-      ? (this.decimalOdds - 1) * 100
-      : -100 / (this.decimalOdds - 1);
+      ? round((this.decimalOdds - 1) * 100, 5)
+      : round(-100 / (this.decimalOdds - 1), 5);
   }
 
   /**
@@ -73,6 +75,16 @@ export class Odds {
         (this.impliedProbability * 100).toFixed(this.stringDecimalPlaces),
       )
     }%`;
+  }
+
+  /**
+   * Gets the fraction odds
+   * 
+   * @readonly
+   * @memberof Odds
+   */
+  get fractionOdds() {
+    return getFraction(this.decimalOdds - 1, this.fractionOddsDivider);
   }
 
   /**

@@ -14,13 +14,13 @@ const displayOddsOutput = (oddsStr: string): void => {
     .setAlign(1, AsciiAlign.RIGHT)
     .addRow("US", odds.usOddsString)
     .addRow("Decimal", odds.decimalOdds)
-    .addRow("Fraction", "To be implemented")
+    .addRow("Fraction", odds.fractionOdds)
     .addRow("Implied probability", odds.impliedProbabilityString);
   console.log(table.toString());
 };
 
 if (args.length != 1) {
-  console.log("Enter a value to be converted")
+  console.log("Enter a value to be converted");
 } else {
   displayOddsOutput(args[0]);
 }
