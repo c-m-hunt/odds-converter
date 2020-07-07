@@ -16,16 +16,16 @@ odds +750
 ```
 Outputs:
 ```
-.-----------------------------------------.
-|             Converted Odds              |
-|-----------------------------------------|
-|        Type         |       Value       |
-|---------------------|-------------------|
-| US                  |              +750 |
-| Decimal             |               8.5 |
-| Fraction            | To be implemented |
-| Implied probability |            11.76% |
-'-----------------------------------------'
+.------------------------------.
+|        Converted Odds        |
+|------------------------------|
+|        Type         | Value  |
+|---------------------|--------|
+| US                  |   +750 |
+| Decimal             |    8.5 |
+| Fraction            |   15/2 |
+| Implied probability | 11.76% |
+'------------------------------'
 ```
 
 
@@ -41,6 +41,7 @@ let odds = new Odds(1.5);
 console.log(odds.decimalOdds); // 1.5
 console.log(odds.usOdds); // -200
 console.log(odds.usOddsString); // "-200"
+console.log(odds.fractionOdds); // "1/2"
 console.log(odds.impliedProbability); // 0.6666666666
 console.log(odds.impliedProbabilityString); // 66.67%
 
@@ -48,6 +49,7 @@ odds = Odds.fromUS("+300");
 console.log(odds.decimalOdds); // 4
 console.log(odds.usOdds); // 300
 console.log(odds.usOddsString); // "+300"
+console.log(odds.fractionOdds); // "3/1"
 console.log(odds.impliedProbability); // 0.25
 console.log(odds.impliedProbabilityString); // "25%"
 ```
