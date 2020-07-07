@@ -5,8 +5,10 @@ const gcd = (a: number, b: number): number => {
 };
 
 export const round = (value: number, decimals: number): number => {
-  return Number(Math.round(parseFloat(value+'e'+decimals))+'e-'+decimals);
-} 
+  return Number(
+    Math.round(parseFloat(value + "e" + decimals)) + "e-" + decimals,
+  );
+};
 
 export const getFraction = (
   decNumber: number,
@@ -17,7 +19,7 @@ export const getFraction = (
     decNumber = 1 / decNumber;
     reciprocal = true;
   }
-  
+
   decNumber = round(decNumber, 3);
   const len = decNumber.toString().length - 2;
 

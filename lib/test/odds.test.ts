@@ -129,3 +129,19 @@ Deno.test({
     });
   },
 });
+
+Deno.test({
+  name: "it converts to fractional odds",
+  fn: (): void => {
+    const expectations: Array<[number, string]> = [
+      [2.25, "5/4"],
+      [1.25, "1/4"],
+      [1001, "1000/1"],
+      [10, "9/1"],
+    ];
+    for (let e of expectations) {
+      let odds = new Odds(e[0]);
+      assertEquals(odds.fractionOdds, e[1]);
+    }
+  },
+});
