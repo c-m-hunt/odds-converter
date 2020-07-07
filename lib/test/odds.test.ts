@@ -27,9 +27,9 @@ Deno.test({
   name: "it creates an object from US odds",
   fn: (): void => {
     let odds = Odds.fromUS("+137.5");
-    assertEquals(odds.decimalOdds, 2.375);
+    assertEquals(odds.decimalOdds, 2.38);
     odds = Odds.fromUS(137.5);
-    assertEquals(odds.decimalOdds, 2.375);
+    assertEquals(odds.decimalOdds, 2.38);
     odds = Odds.fromUS(-450);
     assertEquals(parseFloat(odds.decimalOdds.toFixed(2)), 1.22);
     odds = Odds.fromUS("-450");

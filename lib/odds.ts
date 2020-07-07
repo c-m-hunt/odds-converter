@@ -19,8 +19,8 @@ export enum FractionOddsDivider {
  */
 export class Odds {
   fractionOddsDivider: string = FractionOddsDivider.SLASH;
-  stringDecimalPlaces: number = 2;
-  decimalOdds: number;
+  decimalPlaces: number = 2;
+  _decimalOdds: number;
 
   /**
    * Create an Odds object
@@ -28,7 +28,17 @@ export class Odds {
    * @param decimalOdds Decimal odds to instantiate the class
    */
   constructor(decimalOdds: number) {
-    this.decimalOdds = decimalOdds;
+    this._decimalOdds = decimalOdds;
+  }
+
+  /**
+   * Gets the decimal odds tidied
+   *
+   * @readonly
+   * @memberof Odds
+   */
+  get decimalOdds() {
+    return round(this._decimalOdds, this.decimalPlaces);
   }
 
   /**
@@ -38,9 +48,9 @@ export class Odds {
    * @memberof Odds
    */
   get usOdds() {
-    return this.decimalOdds > 2
-      ? round((this.decimalOdds - 1) * 100, 5)
-      : round(-100 / (this.decimalOdds - 1), 5);
+    return this._decimalOdds > 2
+      ? round((this._decimalOdds - 1) * 100, 5)
+      : round(-100 / (this._decimalOdds - 1), 5);
   }
 
   /**
@@ -60,7 +70,7 @@ export class Odds {
    * @memberof Odds
    */
   get impliedProbability() {
-    return 1 / this.decimalOdds;
+    return 1 / this._decimalOdds;
   }
 
   /**
@@ -72,7 +82,7 @@ export class Odds {
   get impliedProbabilityString() {
     return `${
       parseFloat(
-        (this.impliedProbability * 100).toFixed(this.stringDecimalPlaces),
+        (this.impliedProbability * 100).toFixed(this.decimalPlaces),
       )
     }%`;
   }
@@ -84,7 +94,7 @@ export class Odds {
    * @memberof Odds
    */
   get fractionOdds() {
-    return getFraction(this.decimalOdds - 1, this.fractionOddsDivider);
+    return getFraction(this._decimalOdds - 1, this.fractionOddsDivider);
   }
 
   /**
