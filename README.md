@@ -52,4 +52,12 @@ console.log(odds.usOddsString); // "+300"
 console.log(odds.fractionOdds); // "3/1"
 console.log(odds.impliedProbability); // 0.25
 console.log(odds.impliedProbabilityString); // "25%"
+
+odds = Odds.fromFraction("5/4");
+console.log(odds.decimalOdds); // 2.25
+console.log(odds.usOdds); // 125
+console.log(odds.usOddsString); // "+125"
+console.log(odds.fractionOdds); // "5/4"
+console.log(odds.impliedProbability); // 0.4444444444444
+console.log(odds.impliedProbabilityString); // "44.44%"
 ```

@@ -145,3 +145,19 @@ Deno.test({
     }
   },
 });
+
+Deno.test({
+  name: "it converts fraction string to odds",
+  fn: (): void => {
+    const expectations: Array<[string, number]> = [
+      ["5/4", 2.25],
+      ["1-4", 1.25],
+      ["1000/1", 1001],
+      ["9/1", 10],
+    ];
+    for (let e of expectations) {
+      let odds = Odds.fromFraction(e[0]);
+      assertEquals(odds.decimalOdds, e[1]);
+    }
+  },
+});

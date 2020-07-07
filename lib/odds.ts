@@ -111,7 +111,15 @@ export class Odds {
   }
 
   static fromFraction(oddsFractionString: string): Odds {
-    throw Error("Not implemented");
+    for (let fractionDivider of Object.values(FractionOddsDivider)) {
+      if (oddsFractionString.includes(fractionDivider)) {
+        const oddsParts = oddsFractionString.split(fractionDivider);
+        const decimalOdds = (parseInt(oddsParts[0]) / parseInt(oddsParts[1])) +
+          1;
+        return new Odds(Number(decimalOdds));
+      }
+    }
+    throw new Error(`Input string must contain a fraction divider`);
   }
 
   /**
@@ -129,6 +137,9 @@ export class Odds {
     }
     if (type === OddsType.DECIMAL) {
       return new Odds(Number(oddsString));
+    }
+    if (type === OddsType.FRACTION) {
+      return Odds.fromFraction(oddsString);
     }
     throw Error("Can't find type");
   }
