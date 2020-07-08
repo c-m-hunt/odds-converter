@@ -1,6 +1,6 @@
 {
   "name": "odds-converter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple class and CLI tool for converting betting odds",
   "stable": true,
   "repository": "https://github.com/c-m-hunt/odds-converter",
