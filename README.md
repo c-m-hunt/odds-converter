@@ -9,7 +9,7 @@ A simple class and CLI tool to convert betting odds between formats.
 ## CLI
 ### Install
 ```sh
-deno install -n odds https://deno.land/x/odds_converter/odds.ts
+deno install -n odds https://deno.land/x/odds_converter/cli.ts
 ```
 
 ### Usage

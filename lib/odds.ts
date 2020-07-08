@@ -1,4 +1,4 @@
-import { getFraction, round } from "./utils.ts";
+import { getFraction, round, logger } from "./utils.ts";
 
 export enum OddsType {
   US = "us",
@@ -141,17 +141,21 @@ export class Odds {
    * @memberof Odds
    */
   static fromString(oddsString: string): Odds {
+    logger.info(`Received value ${oddsString}`);
     const type = Odds.guessType(oddsString);
     if (type === OddsType.US) {
+      logger.info("Guessed US type odds string");
       return Odds.fromUS(oddsString);
     }
     if (type === OddsType.DECIMAL) {
+      logger.info("Guessed Decimal type odds string");
       return new Odds(Number(oddsString));
     }
     if (type === OddsType.FRACTION) {
+      logger.info("Guessed Fraction type odds string");
       return Odds.fromFraction(oddsString);
     }
-    throw Error("Can't find type");
+    throw Error(`Cannot find type for ${oddsString}`);
   }
 
   /**

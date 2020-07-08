@@ -1,3 +1,12 @@
+import {
+  Houston,
+  ConsoleTransport,
+} from "https://x.nest.land/Houston@1.0.3/mod.ts";
+
+export const logger = new Houston([
+  new ConsoleTransport(),
+]);
+
 const gcd = (a: number, b: number): number => {
   if (b < 0.001) return a;
 
