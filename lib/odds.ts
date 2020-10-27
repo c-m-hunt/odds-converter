@@ -1,4 +1,4 @@
-import { getFraction, round, logger } from "./utils.ts";
+import { getFraction, logger, round } from "./utils.ts";
 
 export enum OddsType {
   US = "us",
@@ -19,7 +19,7 @@ export enum FractionOddsDivider {
  */
 export class Odds {
   fractionOddsDivider: string = FractionOddsDivider.SLASH;
-  decimalPlaces: number = 2;
+  decimalPlaces = 2;
   _decimalOdds: number;
 
   /**
@@ -121,7 +121,7 @@ export class Odds {
   }
 
   static fromFraction(oddsFractionString: string): Odds {
-    for (let fractionDivider of Object.values(FractionOddsDivider)) {
+    for (const fractionDivider of Object.values(FractionOddsDivider)) {
       if (oddsFractionString.includes(fractionDivider)) {
         const oddsParts = oddsFractionString.split(fractionDivider);
         const decimalOdds = (parseInt(oddsParts[0]) / parseInt(oddsParts[1])) +
@@ -170,7 +170,7 @@ export class Odds {
     if (odds.startsWith("+") || odds.startsWith("-")) {
       return OddsType.US;
     }
-    for (let fractionDivider of Object.values(FractionOddsDivider)) {
+    for (const fractionDivider of Object.values(FractionOddsDivider)) {
       if (odds.includes(fractionDivider)) {
         return OddsType.FRACTION;
       }

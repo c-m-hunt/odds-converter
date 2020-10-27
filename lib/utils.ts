@@ -1,6 +1,6 @@
 import {
-  Houston,
   ConsoleTransport,
+  Houston,
 } from "https://x.nest.land/Houston@1.0.3/mod.ts";
 
 export const logger = new Houston([
@@ -21,7 +21,7 @@ export const round = (value: number, decimals: number): number => {
 
 export const getFraction = (
   decNumber: number,
-  fractionDivider: string = "/",
+  fractionDivider = "/",
 ): string => {
   let reciprocal = false;
   if (decNumber < 1) {
@@ -35,7 +35,7 @@ export const getFraction = (
   let denominator = Math.pow(10, len);
   let numerator = decNumber * denominator;
 
-  let divisor = gcd(numerator, denominator);
+  const divisor = gcd(numerator, denominator);
 
   numerator /= divisor;
   denominator /= divisor;

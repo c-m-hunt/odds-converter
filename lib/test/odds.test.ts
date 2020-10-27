@@ -3,8 +3,8 @@ import {
   assert,
   assertEquals,
   assertNotEquals,
-  assertThrowsAsync,
   assertThrows,
+  assertThrowsAsync,
 } from "https://deno.land/std/testing/asserts.ts";
 
 Deno.test({
@@ -46,8 +46,8 @@ Deno.test({
       [1001, 100000],
       [10, 900],
     ];
-    for (let e of expectations) {
-      let odds = new Odds(e[0]);
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
       assertEquals(odds.usOdds, e[1]);
     }
   },
@@ -62,8 +62,8 @@ Deno.test({
       [1001, "+100000"],
       [10, "+900"],
     ];
-    for (let e of expectations) {
-      let odds = new Odds(e[0]);
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
       assertEquals(odds.usOddsString, e[1]);
     }
   },
@@ -78,8 +78,8 @@ Deno.test({
       [1001, 0.001],
       [10, 0.1],
     ];
-    for (let e of expectations) {
-      let odds = new Odds(e[0]);
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
       assertEquals(parseFloat(odds.impliedProbability.toFixed(4)), e[1]);
     }
   },
@@ -94,8 +94,8 @@ Deno.test({
       [1001, "0.1%"],
       [10, "10%"],
     ];
-    for (let e of expectations) {
-      let odds = new Odds(e[0]);
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
       assertEquals(odds.impliedProbabilityString, e[1]);
     }
   },
@@ -111,8 +111,8 @@ Deno.test({
       ["2.25", OddsType.DECIMAL],
       ["1.25", OddsType.DECIMAL],
     ];
-    for (let e of expectations) {
-      let type = Odds.guessType(e[0]);
+    for (const e of expectations) {
+      const type = Odds.guessType(e[0]);
       assertEquals(type, e[1]);
     }
   },
@@ -139,8 +139,8 @@ Deno.test({
       [1001, "1000/1"],
       [10, "9/1"],
     ];
-    for (let e of expectations) {
-      let odds = new Odds(e[0]);
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
       assertEquals(odds.fractionOdds, e[1]);
     }
   },
@@ -155,8 +155,8 @@ Deno.test({
       ["1000/1", 1001],
       ["9/1", 10],
     ];
-    for (let e of expectations) {
-      let odds = Odds.fromFraction(e[0]);
+    for (const e of expectations) {
+      const odds = Odds.fromFraction(e[0]);
       assertEquals(odds.decimalOdds, e[1]);
     }
   },

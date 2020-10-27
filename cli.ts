@@ -2,7 +2,7 @@ import AsciiTable, { AsciiAlign } from "https://deno.land/x/ascii_table/mod.ts";
 import { Odds } from "./lib/odds.ts";
 import { logger } from "./lib/utils.ts";
 
-let args = Deno.args;
+const args = Deno.args;
 
 const displayOddsOutput = (oddsStr: string): void => {
   try {
