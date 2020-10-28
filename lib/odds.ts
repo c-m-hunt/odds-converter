@@ -28,6 +28,9 @@ export class Odds {
    * @param decimalOdds Decimal odds to instantiate the class
    */
   constructor(decimalOdds: number) {
+    if (decimalOdds <= 1) {
+      throw new RangeError("Input odds must be greater than 1");
+    }
     this._decimalOdds = decimalOdds;
   }
 

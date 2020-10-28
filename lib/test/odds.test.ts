@@ -176,3 +176,15 @@ Deno.test({
     }
   },
 });
+
+Deno.test({
+  name: "it throws an exception when decimal input is invalid",
+  fn: (): void => {
+    assertThrows((): void => {
+      new Odds(0.3);
+    });
+    assertThrows((): void => {
+      new Odds(-3);
+    });
+  },
+});
