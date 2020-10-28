@@ -8,6 +8,8 @@ const displayOddsOutput = (oddsStr: string): void => {
   try {
     const odds = Odds.fromString(oddsStr);
 
+    const reciprocalOdds = odds.reciprocalOdds();
+
     const table = new AsciiTable("Converted Odds");
     table
       .setHeadingAlign(AsciiAlign.CENTER)
@@ -16,7 +18,14 @@ const displayOddsOutput = (oddsStr: string): void => {
       .addRow("US", odds.usOddsString)
       .addRow("Decimal", odds.decimalOdds)
       .addRow("Fraction", odds.fractionOdds)
-      .addRow("Implied probability", odds.impliedProbabilityString);
+      .addRow("Implied probability", odds.impliedProbabilityString)
+      .addRow("Reciprocal US", reciprocalOdds.usOddsString)
+      .addRow("Reciprocal Decimal", reciprocalOdds.decimalOdds)
+      .addRow("Reciprocal Fraction", reciprocalOdds.fractionOdds)
+      .addRow(
+        "Reciprocal implied probability",
+        reciprocalOdds.impliedProbabilityString,
+      );
     console.log(table.toString());
   } catch (ex) {
     logger.error(ex);

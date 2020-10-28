@@ -97,6 +97,14 @@ export class Odds {
     return getFraction(this._decimalOdds - 1, this.fractionOddsDivider);
   }
 
+  reciprocalOdds() {
+    const reciprocalDecimal = this.decimalOdds > 2
+      ? (1 / this.decimalOdds) + 1
+      : (1 / (this.decimalOdds - 1)) + 1;
+
+    return new Odds(reciprocalDecimal);
+  }
+
   /**
    * Create an Odds object from a US odds number or string
    *
