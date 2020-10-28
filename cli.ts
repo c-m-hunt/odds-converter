@@ -8,7 +8,7 @@ const displayOddsOutput = (oddsStr: string): void => {
   try {
     const odds = Odds.fromString(oddsStr);
 
-    const reciprocalOdds = odds.reciprocalOdds();
+    const reciprocalOdds = odds.reciprocalOdds;
 
     const table = new AsciiTable("Converted Odds");
     table
@@ -19,6 +19,7 @@ const displayOddsOutput = (oddsStr: string): void => {
       .addRow("Decimal", odds.decimalOdds)
       .addRow("Fraction", odds.fractionOdds)
       .addRow("Implied probability", odds.impliedProbabilityString)
+      .addRow("", "")
       .addRow("Reciprocal US", reciprocalOdds.usOddsString)
       .addRow("Reciprocal Decimal", reciprocalOdds.decimalOdds)
       .addRow("Reciprocal Fraction", reciprocalOdds.fractionOdds)

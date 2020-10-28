@@ -161,3 +161,18 @@ Deno.test({
     }
   },
 });
+
+Deno.test({
+  name: "it gets reciprocal odds",
+  fn: (): void => {
+    const expectations: Array<[number, number]> = [
+      [1.5, 3],
+      [1.1, 11],
+      [3, 1.5],
+    ];
+    for (const e of expectations) {
+      const odds = new Odds(e[0]);
+      assertEquals(odds.reciprocalOdds.decimalOdds, e[1]);
+    }
+  },
+});
