@@ -1,20 +1,18 @@
-import AsciiTable, { AsciiAlign } from "https://deno.land/x/ascii_table/mod.ts";
+import { AsciiTable3, AlignmentEnum } from 'ascii-table3';
 import { Odds } from "./lib/odds.ts";
 import { logger } from "./lib/utils.ts";
 
-const args = Deno.args;
+const args = Bun.argv;
 
 const displayOddsOutput = (oddsStr: string): void => {
   try {
     const odds = Odds.fromString(oddsStr);
 
-    const reciprocalOdds = odds.reciprocalOdds;
-
-    const table = new AsciiTable("Converted Odds");
-    table
-      .setHeadingAlign(AsciiAlign.CENTER)
+    const {reciprocalOdds} = odds;
+    const table = new AsciiTable3("Converted Odds")
+      .setHeadingAlign(AlignmentEnum.CENTER)
       .setHeading("Type", "Value")
-      .setAlign(1, AsciiAlign.RIGHT)
+      .setAlign(1, AlignmentEnum.RIGHT)
       .addRow("US", odds.usOddsString)
       .addRow("Decimal", odds.decimalOdds)
       .addRow("Fraction", odds.fractionOdds)
@@ -33,8 +31,8 @@ const displayOddsOutput = (oddsStr: string): void => {
   }
 };
 
-if (args.length != 1) {
+if (args.length != 3) {
   console.log("Enter a value to be converted");
 } else {
-  displayOddsOutput(args[0]);
+  displayOddsOutput(args[2]);
 }

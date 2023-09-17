@@ -1,0 +1,14 @@
+{
+  "name": "odds-converter-bun",
+  "module": "cli.ts",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "ascii-table3": "^0.8.2"
+  }
+}

@@ -1,14 +1,16 @@
-import {
-  ConsoleTransport,
-  Houston,
-} from "https://x.nest.land/Houston@1.0.3/mod.ts";
+import winston from "winston";
 
-export const logger = new Houston([
-  new ConsoleTransport(),
-]);
+export const logger = winston.createLogger({
+  level: 'debug',
+  transports: [
+    new winston.transports.Console(),
+  ],
+});
 
 const gcd = (a: number, b: number): number => {
-  if (b < 0.001) return a;
+  if (b < 0.001) {
+    return a;
+  }
 
   return gcd(b, Math.floor(a % b));
 };
