@@ -1,11 +1,7 @@
 import { Odds, OddsType } from "./../odds.ts";
-import {
-  assert,
-  assertEquals,
-  assertNotEquals,
-  assertThrows,
-  assertThrowsAsync,
-} from "https://deno.land/std/testing/asserts.ts";
+import { assertThrows } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std/assert/assert_equals.ts";
+import { assert } from "https://deno.land/std/assert/assert.ts";
 
 Deno.test({
   name: "it creates an Odds object",

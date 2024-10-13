@@ -24,7 +24,7 @@ export class Odds {
 
   /**
    * Create an Odds object
-   * 
+   *
    * @param decimalOdds Decimal odds to instantiate the class
    */
   constructor(decimalOdds: number) {
@@ -92,7 +92,7 @@ export class Odds {
 
   /**
    * Gets the fraction odds
-   * 
+   *
    * @readonly
    * @memberof Odds
    */
@@ -102,7 +102,7 @@ export class Odds {
 
   /**
    * Gets the reciprocal odds object
-   * 
+   *
    * @readonly
    * @returns {Odds}
    */
