@@ -29,7 +29,7 @@ const displayOddsOutput = (oddsStr: string): void => {
       );
     console.log(table.toString());
   } catch (ex) {
-    logger.error(ex);
+    logger.error(String(ex));
   }
 };
 

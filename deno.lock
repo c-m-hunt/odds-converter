@@ -1,0 +1,21 @@
+{
+  "version": "4",
+  "redirects": {
+    "https://arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/mod.ts": "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/mod.ts",
+    "https://deno.land/x/ascii_table/mod.ts": "https://deno.land/x/ascii_table@v0.1.0/mod.ts",
+    "https://x.nest.land/Houston@1.0.3/mod.ts": "https://arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/mod.ts"
+  },
+  "remote": {
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/mod.ts": "3be41c02500642bd3559b8ba99a79aa3c95c97cef284f06533dda81aaab0f06c",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/Houston.ts": "583d1900276b18efb8526f5ab703dafadde74cfcbcb5a06202aa5470741851eb",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/prefix/Prefix.ts": "657e1bbfba85ce1a713b42c92703561cded50cfc6ccff2c4f3aa4ba550c7e2ef",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/prefix/prefixes/NoPrefix.ts": "054ee11154213fa2833bbd6e84af08d1850a8042430bc5daa94ddd00c5ef45d8",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/prefix/prefixes/TextPrefix.ts": "fa932b73def230b5ec79f5fc4dd3a5a3e1c1c9cece93b4a0da9551d4f7a926cd",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/prefix/prefixes/TimePrefix.ts": "4e33c4fa067ee4cf28b702566e68888e3d498a34a336cffbf6ca0dae1526d11c",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/transport/Transport.ts": "4381b14cf06033eb72922658557343bef139142b27cbee9ffe3e74d00920424f",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/transport/transports/ConsoleTransport.ts": "4ac797c08bfa0e4f94298a914591ec0329b166f4af0c5c016668a9143f8c5def",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/lib/transport/transports/FileTransport.ts": "2c3a1d98e11986076a7bd26a6b09fe4baba2c190948dd9ee9d130282a6e94177",
+    "https://6ckosorq3nw5fafqccwawa6wbepmjwto5h5m6kngc6oqvvei7xvq.arweave.net/8JTpOjDbbdKAsBCsCwPWCR7E2m7p-s8pphedCtSI_es/src/types.ts": "be49f851e167689e306023c2e6f42fa7cd87f850a2ba67de0afddc60f329a914",
+    "https://deno.land/x/ascii_table@v0.1.0/mod.ts": "bd99729ffefd9e0792787b7aafd06c5257039b31ffe3b987fe5257d3fa0c39b5"
+  }
+}

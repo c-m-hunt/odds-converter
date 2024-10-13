@@ -1,4 +1,5 @@
 # Odds converter
+
 ![Latest Tag](https://img.shields.io/github/v/tag/c-m-hunt/odds-converter)
 [![deno version](https://img.shields.io/badge/deno-^1.5-informational)](https://github.com/denoland/deno)
 ![Build](https://img.shields.io/github/workflow/status/c-m-hunt/odds-converter/Run%20Tests)
@@ -8,16 +9,21 @@
 A simple class and CLI tool to convert betting odds between formats.
 
 ## CLI
+
 ### Install
+
 ```sh
 deno install -n odds https://deno.land/x/odds_converter/cli.ts
 ```
 
 ### Usage
+
 ```
 odds +750
 ```
+
 Outputs:
+
 ```
 .------------------------------.
 |        Converted Odds        |
@@ -31,14 +37,16 @@ Outputs:
 '------------------------------'
 ```
 
-
 ## Odds class
+
 ### Install
+
 ```typescript
-import { Odds } from 'https://deno.land/x/odds_converter/odds.ts';
+import { Odds } from "https://deno.land/x/odds_converter/odds.ts";
 ```
 
 ### Usage
+
 ```typescript
 let odds = new Odds(1.5);
 console.log(odds.decimalOdds); // 1.5
