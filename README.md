@@ -1,9 +1,8 @@
 # Odds converter
 
 ![Latest Tag](https://img.shields.io/github/v/tag/c-m-hunt/odds-converter)
-[![deno version](https://img.shields.io/badge/deno-^1.5-informational)](https://github.com/denoland/deno)
-![Build](https://img.shields.io/github/workflow/status/c-m-hunt/odds-converter/Run%20Tests)
-![Run Tests](https://github.com/c-m-hunt/odds-converter/workflows/Run%20Tests/badge.svg)
+[![deno version](https://img.shields.io/badge/deno-^2.0-informational)](https://github.com/denoland/deno)
+![Run Tests](https://img.shields.io/github/actions/workflow/status/c-m-hunt/odds-converter/run_tests.yml)
 [![nest badge](https://nest.land/badge.svg)](https://nest.land/package/odds-converter)
 
 A simple class and CLI tool to convert betting odds between formats.
@@ -25,16 +24,21 @@ odds +750
 Outputs:
 
 ```
-.------------------------------.
-|        Converted Odds        |
-|------------------------------|
-|        Type         | Value  |
-|---------------------|--------|
-| US                  |   +750 |
-| Decimal             |    8.5 |
-| Fraction            |   15/2 |
-| Implied probability | 11.76% |
-'------------------------------'
+.-----------------------------------------.
+|             Converted Odds              |
+|-----------------------------------------|
+|              Type              | Value  |
+|--------------------------------|--------|
+| US                             |   +750 |
+| Decimal                        |    8.5 |
+| Fraction                       |   15/2 |
+| Implied probability            | 11.76% |
+|                                |        |
+| Reciprocal US                  |   -750 |
+| Reciprocal Decimal             |   1.13 |
+| Reciprocal Fraction            |   2/15 |
+| Reciprocal implied probability | 88.24% |
+'-----------------------------------------'
 ```
 
 ## Odds class
