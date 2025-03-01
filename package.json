@@ -5,6 +5,9 @@
   "stable": true,
   "repository": "https://github.com/c-m-hunt/odds-converter",
   "entry": "./odds.ts",
+  "scripts": {
+    "install": "deno install --allow-all -n odds --global -f cli.ts"
+  },
   "files": [
     "./odds.ts",
     "./cli.ts",
